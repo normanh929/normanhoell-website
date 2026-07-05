@@ -1,0 +1,27 @@
+{
+  "posts": [
+    {
+      "title": "Website neu gestartet",
+      "date": "2026-07-05",
+      "excerpt": "Die Seite zeigt jetzt meine drei Arbeitsbereiche: Beratung für NonProfits, Sportpolitik und Bewegungsförderung."
+    },
+    {
+      "title": "Bildungsurlaub „In Bewegung kommen” – neue Termine 2026",
+      "date": "2026-06-01",
+      "excerpt": "Neue Termine im BiKuZ Höchst und in der VHS Bockenheim sind online. Anmeldung über die VHS Frankfurt."
+    },
+    {
+      "title": "Gemeinsam kochen, gemeinsam essen – Aktionsküche im Gündi West ein toller Erfolg",
+      "date": "2026-04-18",
+      "images": ["images/news/stadtteilkueche-1.jpg", "images/news/stadtteilkueche-2.jpg"],
+      "excerpt": "Über 40 kostenlose Mahlzeiten aus geretteten und regionalen Lebensmitteln – die erste Aktionsküche im Gündi West Höchst war ein voller Erfolg.",
+      "body": [
+        "Am 18. April verwandelte sich das Gündi West in Höchst in eine lebendige Stadtteilküche: Über 40 Mahlzeiten wurden beim kostenlosen Mittagessen ausgegeben – gekocht wurde ausschließlich aus geretteten oder regionalen Lebensmitteln, geliefert von foodsharing Höchst, dem Bauernhof Luisenhof und dem Höchster Markt.",
+        "Acht Ehrenamtliche bereiteten Salat, Kartoffelsuppe, Ofengemüse sowie Waffeln und Crêpes vor und servierten die Speisen – bei strahlendem Sonnenschein. Das Feedback der Besucherinnen und Besucher war durchweg positiv, und eine Frage kam immer wieder: „Gibt es das jetzt öfter?“",
+        "Die Reste gingen nicht verloren: Sie wurden an die Ada Kantine in Bockenheim und die Drogenhilfe im Bahnhofsviertel weitergegeben.",
+        "Die Aktion war mehr als ein gelungenes Mittagessen – sie zeigte, was möglich ist, wenn Nachbarschaft, Ehrenamt und regionale Netzwerke zusammenwirken. Und sie unterstrich die Forderung nach einer kommunal geförderten Stadtteilküche als Teil der sozialen Daseinsvorsorge in Frankfurt.",
+        "Nach diesem Auftakt sind weitere Aktionen bereits in Planung. Wer mitmachen oder auf dem Laufenden bleiben möchte, kann sich gerne melden."
+      ]
+    }
+  ]
+}
