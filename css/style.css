@@ -638,8 +638,13 @@ body.no-scroll { overflow: hidden; }
 .post-modal-content .news-cover,
 .post-modal-content .news-slider {
   height: 320px;
+  background: #141414;
   border-radius: 14px 14px 0 0;
   margin-bottom: 0;
+}
+.post-modal-content .news-cover img,
+.post-modal-content .news-image {
+  object-fit: contain;
 }
 .post-modal-content .news-slider-track .news-image { border-radius: 0; }
 .post-modal-body {
