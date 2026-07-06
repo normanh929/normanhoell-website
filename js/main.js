@@ -20,15 +20,7 @@ async function loadNews() {
       return;
     }
 
-    const featured = posts.slice(0, 2);
-    const archive = posts.slice(2);
-
-    const featuredHtml = `<div class="card-grid">${featured.map(renderPost).join("")}</div>`;
-    const archiveHtml = archive.length
-      ? `<div class="news-archive">${archive.map(renderArchivePost).join("")}</div>`
-      : "";
-
-    list.innerHTML = featuredHtml + archiveHtml;
+    list.innerHTML = `<div class="card-grid card-grid-3">${posts.map(renderPost).join("")}</div>`;
     initSliders(list);
   } catch (err) {
     list.innerHTML = '<p class="news-empty">News konnten nicht geladen werden.</p>';
@@ -44,7 +36,12 @@ function renderPost(post) {
 
   const coverHtml = cover
     ? `<div class="news-cover"><img src="${escapeHtml(cover)}" alt="${escapeHtml(post.title)}" class="lightbox-img"></div>`
-    : "";
+    : `<div class="news-cover news-cover-placeholder" aria-hidden="true">
+         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
+           <path d="M4 4h16v16H4z" stroke-opacity="0.85"/>
+           <path d="M8 9h8M8 13h8M8 17h4" stroke-opacity="0.85"/>
+         </svg>
+       </div>`;
 
   const summary = `
     ${coverHtml}
@@ -54,7 +51,7 @@ function renderPost(post) {
       <p>${escapeHtml(post.excerpt || "")}</p>
     </div>`;
 
-  const cardClass = "info-card" + (cover ? " has-cover" : "");
+  const cardClass = "info-card has-cover";
 
   if (!hasBody) {
     return `<div class="${cardClass}">${summary}</div>`;
@@ -70,33 +67,6 @@ function renderPost(post) {
       <h5 class="detail-heading">Mehr zum Beitrag</h5>
       ${bodyHtml}
       ${extraImages}
-    </div>
-  </details>`;
-}
-
-function renderArchivePost(post) {
-  const summary = `
-    <span class="info-date">${formatDate(post.date)}</span>
-    <h4>${escapeHtml(post.title)}</h4>`;
-
-  const hasBody = Array.isArray(post.body) && post.body.length > 0;
-  const images = Array.isArray(post.images) ? post.images : [];
-
-  if (!hasBody && !post.excerpt) {
-    return `<div class="news-archive-item">${summary}</div>`;
-  }
-
-  const teaser = post.excerpt ? `<p>${escapeHtml(post.excerpt)}</p>` : "";
-  const bodyHtml = hasBody ? post.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("") : "";
-
-  return `
-  <details class="news-archive-item">
-    <summary>${summary}</summary>
-    <div class="info-card-detail">
-      <h5 class="detail-heading">Mehr zum Beitrag</h5>
-      ${renderImages(images, post.title, true)}
-      ${teaser}
-      ${bodyHtml}
     </div>
   </details>`;
 }
