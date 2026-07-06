@@ -5,6 +5,61 @@ window.addEventListener("scroll", () => {
   nav.classList.toggle("is-scrolled", window.scrollY > 40);
 });
 
+const navToggle = document.getElementById("nav-toggle");
+const navLinksEl = document.getElementById("nav-links");
+if (navToggle && navLinksEl) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navLinksEl.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+  navLinksEl.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinksEl.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+initScrollSpy();
+
+function initScrollSpy() {
+  const sectionToLink = {
+    angebot: "angebot",
+    sportpolitik: "angebot",
+    bewegung: "angebot",
+    beratung: "angebot",
+    referenzen: "angebot",
+    news: "news",
+    "ueber-mich": "ueber-mich",
+    kontakt: "kontakt",
+  };
+  const links = {};
+  navLinksEl?.querySelectorAll("a").forEach((a) => {
+    links[a.getAttribute("href").slice(1)] = a;
+  });
+
+  const sections = Object.keys(sectionToLink)
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+  if (!sections.length) return;
+
+  const setActive = (id) => {
+    Object.values(links).forEach((a) => a.classList.remove("is-active"));
+    const link = links[sectionToLink[id]];
+    if (link) link.classList.add("is-active");
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-45% 0px -50% 0px" }
+  );
+  sections.forEach((s) => observer.observe(s));
+}
+
 let openPostModal = null;
 
 async function loadNews() {

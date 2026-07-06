@@ -105,6 +105,7 @@ a { color: inherit; }
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .nav.is-scrolled .nav-links a { color: var(--color-text); }
 .nav-links {
@@ -120,9 +121,35 @@ a { color: inherit; }
   letter-spacing: 0.02em;
   color: #fff;
   opacity: 0.9;
+  transition: color 0.2s ease, opacity 0.2s ease;
 }
 .nav-links a:hover { opacity: 1; }
-.nav-toggle { display: none; }
+.nav-links a.is-active {
+  color: var(--color-accent);
+  opacity: 1;
+  font-weight: 600;
+}
+.nav.is-scrolled .nav-links a.is-active { color: var(--color-accent); }
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: background 0.2s ease;
+}
+.nav.is-scrolled .nav-toggle span { background: var(--color-text); }
 
 /* Hero */
 .hero {
@@ -714,11 +741,37 @@ footer a { color: var(--color-text-muted); }
   .card-grid-2, .card-grid-3 { grid-template-columns: 1fr; }
   .split { grid-template-columns: 1fr; }
   .split-reverse { direction: ltr; }
-  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 16px);
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: var(--color-bg-white);
+    border-radius: 10px;
+    padding: 8px 0;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.15);
+  }
+  .nav-links.is-open { display: flex; }
+  .nav-links a {
+    color: var(--color-text);
+    opacity: 1;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+  }
   .timeline { grid-template-columns: 1fr; gap: 28px; }
   .timeline::before { top: 0; bottom: 0; left: 5px; right: auto; width: 1px; height: auto; }
   .timeline-step { padding-top: 0; padding-left: 28px; }
   .timeline-dot { top: 4px; left: 0; }
   .hero-heading { flex-direction: column; align-items: flex-start; gap: 18px; }
   .hero .hero-location { border-left: none; border-top: 3px solid var(--color-accent); padding-left: 0; padding-top: 14px; }
+}
+
+@media (max-width: 640px) {
+  .force-break { display: none; }
 }
