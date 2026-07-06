@@ -5,6 +5,8 @@ window.addEventListener("scroll", () => {
   nav.classList.toggle("is-scrolled", window.scrollY > 40);
 });
 
+let openPostModal = null;
+
 async function loadNews() {
   const list = document.getElementById("news-list");
   try {
@@ -21,75 +23,62 @@ async function loadNews() {
     }
 
     list.innerHTML = `<div class="card-grid card-grid-3">${posts.map(renderPost).join("")}</div>`;
-    initSliders(list);
+
+    list.querySelectorAll(".info-card[data-post-index]").forEach((card) => {
+      card.addEventListener("click", () => {
+        openPostModal(posts[Number(card.dataset.postIndex)]);
+      });
+    });
   } catch (err) {
     list.innerHTML = '<p class="news-empty">News konnten nicht geladen werden.</p>';
     console.error(err);
   }
 }
 
-function renderPost(post) {
+function renderPost(post, index) {
   const hasBody = Array.isArray(post.body) && post.body.length > 0;
   const images = Array.isArray(post.images) ? post.images : [];
   const cover = images[0];
-  const remainingImages = images.slice(1);
 
   const coverHtml = cover
-    ? `<div class="news-cover"><img src="${escapeHtml(cover)}" alt="${escapeHtml(post.title)}" class="lightbox-img"></div>`
+    ? `<div class="news-cover"><img src="${escapeHtml(cover)}" alt="${escapeHtml(post.title)}"></div>`
     : `<div class="news-cover news-cover-placeholder" aria-hidden="true">
-         <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
+         <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5">
            <path d="M4 4h16v16H4z" stroke-opacity="0.85"/>
            <path d="M8 9h8M8 13h8M8 17h4" stroke-opacity="0.85"/>
          </svg>
        </div>`;
 
-  const summary = `
+  const cardClass = "info-card has-cover" + (hasBody ? " is-clickable" : "");
+  const indexAttr = hasBody ? ` data-post-index="${index}"` : "";
+
+  return `
+  <div class="${cardClass}"${indexAttr}>
     ${coverHtml}
     <div class="info-card-body">
       <span class="info-date">${formatDate(post.date)}</span>
       <h4>${escapeHtml(post.title)}</h4>
       <p>${escapeHtml(post.excerpt || "")}</p>
-    </div>`;
-
-  const cardClass = "info-card has-cover";
-
-  if (!hasBody) {
-    return `<div class="${cardClass}">${summary}</div>`;
-  }
-
-  const bodyHtml = post.body.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
-  const extraImages = renderImages(remainingImages, post.title, true);
-
-  return `
-  <details class="${cardClass}">
-    <summary>${summary}</summary>
-    <div class="info-card-detail">
-      <h5 class="detail-heading">Mehr zum Beitrag</h5>
-      ${bodyHtml}
-      ${extraImages}
+      ${hasBody ? '<span class="read-more">Weiterlesen →</span>' : ""}
     </div>
-  </details>`;
+  </div>`;
 }
 
-function renderImages(images, title, compact) {
+function renderImages(images, title) {
   if (!images.length) return "";
 
   const alt = escapeHtml(title);
-  const imgClass = "news-image lightbox-img" + (compact ? " is-compact" : "");
   if (images.length === 1) {
-    return `<img src="${escapeHtml(images[0])}" alt="${alt}" class="${imgClass}">`;
+    return `<div class="news-cover"><img src="${escapeHtml(images[0])}" alt="${alt}"></div>`;
   }
 
-  const sliderClass = "news-slider" + (compact ? " is-compact" : "");
-  const slides = images
-    .map((src) => `<img src="${escapeHtml(src)}" alt="${alt}" class="${imgClass}">`)
-    .join("");
+  const slides = images.map((src) => `<img src="${escapeHtml(src)}" alt="${alt}" class="news-image">`).join("");
   const dots = images
     .map((_, i) => `<button type="button" class="slider-dot${i === 0 ? " is-active" : ""}" data-slide-to="${i}" aria-label="Bild ${i + 1}"></button>`)
     .join("");
 
   return `
-    <div class="${sliderClass}" data-index="0">
+    <div class="news-slider" data-index="0">
       <div class="news-slider-track">${slides}</div>
       <button type="button" class="slider-btn slider-prev" aria-label="Vorheriges Bild">&#8249;</button>
       <button type="button" class="slider-btn slider-next" aria-label="Nächstes Bild">&#8250;</button>
@@ -139,26 +128,47 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 
-function initLightbox() {
-  const overlay = document.createElement("div");
-  overlay.className = "lightbox";
-  overlay.innerHTML = '<img alt="" /><button type="button" class="lightbox-close" aria-label="Schließen">&times;</button>';
-  document.body.appendChild(overlay);
-  const overlayImg = overlay.querySelector("img");
+function initPostModal() {
+  const modal = document.createElement("div");
+  modal.className = "post-modal";
+  modal.innerHTML = `
+    <div class="post-modal-backdrop"></div>
+    <div class="post-modal-panel">
+      <button type="button" class="post-modal-close" aria-label="Schließen">&times;</button>
+      <div class="post-modal-content"></div>
+    </div>`;
+  document.body.appendChild(modal);
+  const content = modal.querySelector(".post-modal-content");
 
-  document.addEventListener("click", (e) => {
-    const target = e.target.closest(".lightbox-img");
-    if (!target) return;
-    overlayImg.src = target.src;
-    overlayImg.alt = target.alt;
-    overlay.classList.add("is-open");
-  });
+  function close() {
+    modal.classList.remove("is-open");
+    document.body.classList.remove("no-scroll");
+  }
 
-  overlay.addEventListener("click", () => overlay.classList.remove("is-open"));
+  modal.querySelector(".post-modal-backdrop").addEventListener("click", close);
+  modal.querySelector(".post-modal-close").addEventListener("click", close);
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") overlay.classList.remove("is-open");
+    if (e.key === "Escape") close();
   });
+
+  return function open(post) {
+    const images = Array.isArray(post.images) ? post.images : [];
+    const bodyHtml = (post.body || []).map((p) => `<p>${escapeHtml(p)}</p>`).join("");
+
+    content.innerHTML = `
+      ${renderImages(images, post.title)}
+      <div class="post-modal-body">
+        <span class="info-date">${formatDate(post.date)}</span>
+        <h3>${escapeHtml(post.title)}</h3>
+        ${bodyHtml}
+      </div>`;
+    initSliders(content);
+    modal.scrollTop = 0;
+    content.closest(".post-modal-panel").scrollTop = 0;
+    modal.classList.add("is-open");
+    document.body.classList.add("no-scroll");
+  };
 }
 
 loadNews();
-initLightbox();
+openPostModal = initPostModal();
