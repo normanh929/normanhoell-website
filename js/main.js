@@ -209,6 +209,9 @@ function initPostModal() {
   return function open(post) {
     const images = Array.isArray(post.images) ? post.images : [];
     const bodyHtml = (post.body || []).map((p) => `<p>${escapeHtml(p)}</p>`).join("");
+    const linkHtml = post.link
+      ? `<a href="${escapeHtml(post.link)}" class="cta-button" target="_blank" rel="noopener">${escapeHtml(post.linkText || "Mehr erfahren")}</a>`
+      : "";
 
     content.innerHTML = `
       ${renderImages(images, post.title)}
@@ -216,6 +219,7 @@ function initPostModal() {
         <span class="info-date">${formatDate(post.date)}</span>
         <h3>${escapeHtml(post.title)}</h3>
         ${bodyHtml}
+        ${linkHtml}
       </div>`;
     initSliders(content);
     modal.scrollTop = 0;
