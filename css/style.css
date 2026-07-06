@@ -313,6 +313,12 @@ section { padding: 96px 0; }
   color: var(--color-accent);
 }
 .cta-button.is-ghost:hover { border-color: var(--color-accent); color: #fff; background: var(--color-accent); }
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 20px;
+}
 
 /* Project / news cards */
 .card-grid {
