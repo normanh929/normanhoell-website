@@ -303,7 +303,7 @@ section { padding: 96px 0; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-accent);
+  background: var(--color-text-muted);
 }
 
 .cta-button {
@@ -341,7 +341,6 @@ section { padding: 96px 0; }
 .info-card {
   background: var(--color-bg-white);
   border-radius: 10px;
-  border-left: 3px solid var(--color-accent);
   padding: 24px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.05);
 }
@@ -390,13 +389,17 @@ section { padding: 96px 0; }
 .info-card .info-date {
   display: block;
   font-size: 0.78rem;
-  color: var(--color-accent);
+  color: var(--color-text-muted);
   font-weight: 600;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
-.info-card.is-feature { border-left-width: 4px; margin-top: 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.info-card.is-feature { margin-top: 32px; max-width: 640px; margin-left: auto; margin-right: auto; }
+.info-card-detail a:not(.cta-button) {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
 .info-card .info-target {
   margin-top: 12px;
   padding-top: 12px;
