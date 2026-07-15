@@ -23,3 +23,100 @@ collections:
               - { label: "Titel", name: "title", widget: "string" }
               - { label: "Datum", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
               - { label: "Kurztext", name: "excerpt", widget: "text" }
+
+  - name: "site"
+    label: "Seiteninhalte"
+    files:
+      - name: "site"
+        label: "Texte auf der Startseite"
+        file: "content/site.json"
+        fields:
+          - label: "Titelseite (Hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Begrüßungstext (je Zeile ein Absatz)", name: "tagline", widget: "text" }
+
+          - label: "Mein Angebot"
+            name: "angebot"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "lead", widget: "text" }
+              - { label: "Kachel 1 – Titel", name: "pillarSportpolitikTitle", widget: "string" }
+              - { label: "Kachel 1 – Text", name: "pillarSportpolitikText", widget: "text" }
+              - { label: "Kachel 2 – Titel", name: "pillarBewegungTitle", widget: "string" }
+              - { label: "Kachel 2 – Text", name: "pillarBewegungText", widget: "text" }
+              - { label: "Kachel 3 – Titel", name: "pillarBeratungTitle", widget: "string" }
+              - { label: "Kachel 3 – Text", name: "pillarBeratungText", widget: "text" }
+
+          - label: "News & Blog – Einleitung"
+            name: "news"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "lead", widget: "text" }
+
+          - label: "Jugend- und Sportpolitik"
+            name: "sportpolitik"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "intro", widget: "text" }
+              - { label: "Projekt-Label", name: "projectLabel", widget: "string" }
+              - { label: "Projekt-Titel", name: "projectTitle", widget: "string" }
+              - { label: "Projekt-Beschreibung", name: "projectText", widget: "text" }
+              - { label: "Stichpunkt 1", name: "bullet1", widget: "text" }
+              - { label: "Stichpunkt 2", name: "bullet2", widget: "text" }
+              - { label: "Stichpunkt 3", name: "bullet3", widget: "text" }
+
+          - label: "Bewegungsförderung"
+            name: "bewegung"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "lead", widget: "text" }
+              - { label: "Fit in Frankfurt – Titel", name: "fitTitle", widget: "string" }
+              - { label: "Fit in Frankfurt – Kurztext", name: "fitSummary", widget: "text" }
+              - { label: "Fit in Frankfurt – Details", name: "fitDetail", widget: "text" }
+              - { label: "VHS Bildungsurlaub – Titel", name: "vhsTitle", widget: "string" }
+              - { label: "VHS Bildungsurlaub – Kurztext", name: "vhsSummary", widget: "text" }
+              - { label: "VHS Bildungsurlaub – Termine (je Zeile ein Termin)", name: "vhsDetail", widget: "text" }
+              - { label: "Stadtteilküche – Titel", name: "kuecheTitle", widget: "string" }
+              - { label: "Stadtteilküche – Kurztext", name: "kuecheSummary", widget: "text" }
+              - { label: "Stadtteilküche – Details", name: "kuecheDetail", widget: "text" }
+
+          - label: "Beratung für NonProfits"
+            name: "beratung"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "lead", widget: "text" }
+              - { label: "Leistung 1 – Titel", name: "service1Title", widget: "string" }
+              - { label: "Leistung 1 – Text", name: "service1Text", widget: "text" }
+              - { label: "Leistung 2 – Titel", name: "service2Title", widget: "string" }
+              - { label: "Leistung 2 – Text", name: "service2Text", widget: "text" }
+              - { label: "Leistung 3 – Titel", name: "service3Title", widget: "string" }
+              - { label: "Leistung 3 – Text", name: "service3Text", widget: "text" }
+              - { label: "Referenzprojekt – Titel", name: "referenceTitle", widget: "string" }
+              - { label: "Referenzprojekt – Text", name: "referenceText", widget: "text" }
+              - { label: "Referenzprojekt – Zielgruppe", name: "referenceTarget", widget: "text" }
+              - { label: "Hinweistext (klein, kursiv)", name: "placeholderNote", widget: "text" }
+
+          - label: "Über mich"
+            name: "ueberMich"
+            widget: "object"
+            fields:
+              - { label: "Zitat", name: "quote", widget: "text" }
+              - { label: "Kurzbiografie", name: "bio", widget: "text" }
+              - { label: "Station 1 – Titel", name: "step1Title", widget: "string" }
+              - { label: "Station 1 – Text", name: "step1Text", widget: "text" }
+              - { label: "Station 2 – Titel", name: "step2Title", widget: "string" }
+              - { label: "Station 2 – Text", name: "step2Text", widget: "text" }
+              - { label: "Station 3 – Titel", name: "step3Title", widget: "string" }
+              - { label: "Station 3 – Text", name: "step3Text", widget: "text" }
+              - { label: "Station 4 – Titel", name: "step4Title", widget: "string" }
+              - { label: "Station 4 – Text", name: "step4Text", widget: "text" }
+              - { label: "Station 5 – Titel", name: "step5Title", widget: "string" }
+              - { label: "Station 5 – Text", name: "step5Text", widget: "text" }
+
+          - label: "Kontakt"
+            name: "kontakt"
+            widget: "object"
+            fields:
+              - { label: "Einleitungstext", name: "intro", widget: "text" }

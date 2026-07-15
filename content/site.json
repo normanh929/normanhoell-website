@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "tagline": "Hallo, ich bin Norman.\nFreiberuflicher Projektleiter, Referent und Sportübungsleiter mit Fokus auf\nsoziale Bewegungs-, Bildungs- und Gesundheitsprojekte."
+  },
+  "angebot": {
+    "lead": "Ich verbinde wirtschaftliche Themen mit sozialem Engagement –\nin meinen Arbeiten stehen Kooperation, Nachhaltigkeit und Inklusion im Mittelpunkt",
+    "pillarSportpolitikTitle": "Sportpolitik",
+    "pillarSportpolitikText": "Jugend- und Sportpolitik bei der Sportjugend Hessen.",
+    "pillarBewegungTitle": "Bewegungsförderung & politisches Engagement",
+    "pillarBewegungText": "Projekte, Kurse und Schulungen rund um Bewegung und Gesundheit.",
+    "pillarBeratungTitle": "Beratung & Umsetzung für NonProfits",
+    "pillarBeratungText": "Finanzielle & digitale Beratung für Vereine, Stiftungen und Verbände."
+  },
+  "news": {
+    "lead": "Updates zu Projekten, Sportpolitik und aktuellen Themen."
+  },
+  "sportpolitik": {
+    "intro": "Bei der Sportjugend Hessen setze ich mich für demokratische Werte, Vielfalt und Menschenrechte im organisierten Sport ein. Sportvereine sind Orte der Begegnung und gelebten Alltags-Demokratie – meine Arbeit unterstützt sie dabei, das sichtbar zu machen und aktiv zu gestalten: von Antidiskriminierung über Antisemitismus-Prävention bis zur Stärkung von Vielfalt in Vereinsstrukturen.",
+    "projectLabel": "Aktuelles Projekt",
+    "projectTitle": "DemoS – Demokratie bewegt!",
+    "projectText": "Das Modellprojekt macht Demokratie im Sport erlebbar und hilft Vereinen, Mitbestimmung lebendiger und zugänglicher zu gestalten.",
+    "bullet1": "Workshops zu demokratischen Werten und mehr Vielfalt in Sportvereinen",
+    "bullet2": "Beratung und Schulungen für Vorstände zu transparenter Entscheidungsfindung",
+    "bullet3": "Aufbau neuer, niedrigschwelliger Beteiligungsformate für Vereinsmitglieder"
+  },
+  "bewegung": {
+    "lead": "Gesundheitsförderung, Bewegungsangebote und soziale Vernetzung.",
+    "fitTitle": "Fit in Frankfurt",
+    "fitSummary": "Koordination von Bewegungsspaziergängen in Frankfurt.",
+    "fitDetail": "Regelmäßige, kostenlose Bewegungsspaziergänge für Menschen jeden Alters in Frankfurt – in Kooperation mit dem Gesundheitsamt Frankfurt und dem Sportamt Frankfurt am Main.",
+    "vhsTitle": "VHS Frankfurt – Bildungsurlaub",
+    "vhsSummary": "„In Bewegung kommen“ – Termine 2026 in Höchst und Bockenheim.",
+    "vhsDetail": "06.–10. Juli 2026, BiKuZ Höchst\n05.–09. Oktober 2026, BiKuZ Höchst\n23.–27. November 2026, VHS Bockenheim",
+    "kuecheTitle": "Frankfurter Stadtteilküche",
+    "kuecheSummary": "Pilotprojekt für öffentliche Nahverpflegung in Frankfurter Stadtteilen.",
+    "kuecheDetail": "Die Frankfurter Stadtteilküche erprobt öffentliche Kochaktionen als gelebte Forderung nach einer fürsorgenden Stadt: Ernährung soll so selbstverständlich zur Stadt gehören wie Bibliotheken oder Schwimmbäder. Ziel ist eine öffentliche Nahverpflegung für alle (#ÖNVP) in jedem Frankfurter Stadtteil."
+  },
+  "beratung": {
+    "lead": "Vereine, Stiftungen und Verbände stehen oft vor denselben Herausforderungen: knappe Ressourcen, gewachsene Prozesse und wenig Zeit für Digitalisierung. Mit meinem Hintergrund aus BWL-Studium, Finanz- und Controllingabteilungen sowie eigener Verbandsarbeit unterstütze ich sie dabei, wirtschaftlich stabiler und digital handlungsfähiger zu werden.",
+    "service1Title": "Finanzplanung & Controlling",
+    "service1Text": "Budgetierung und Controlling für Vereine & Stiftungen.",
+    "service2Title": "Datenanalyse & Prozesse",
+    "service2Text": "Prozessoptimierung, z. B. Vereinsverwaltung und Reporting.",
+    "service3Title": "Digitalisierung",
+    "service3Text": "Einführung digitaler Tools für Verwaltung und Kommunikation.",
+    "referenceTitle": "Weltladen-Dachverband e.V.",
+    "referenceText": "Datenanalyse und Prozessoptimierung für den bundesweiten Dachverband der Weltläden.",
+    "referenceTarget": "Für: Vereine, Stiftungen und Verbände im sozialen, sportlichen und gemeinnützigen Bereich.",
+    "placeholderNote": "Platzhalter: genaues Leistungspaket ergänzen (z. B. Einzelberatung, Workshops, Projektbegleitung)."
+  },
+  "ueberMich": {
+    "quote": "Brücken bauen zwischen Zahlen, Konzepten und echten Begegnungen.",
+    "bio": "Aufgewachsen auf dem Land, lebe ich heute in Frankfurt und bewege mich beruflich zwischen Wirtschaft, Bildung und Sport. Als sportbegeisterter Mensch bin ich überzeugt: Veränderung entsteht im Miteinander.",
+    "step1Title": "Landleben",
+    "step1Text": "Aufgewachsen auf dem Land, geprägt von Bewegung und Gemeinschaft.",
+    "step2Title": "BWL-Studium",
+    "step2Text": "Wirtschaftliches Fundament als Ausgangspunkt.",
+    "step3Title": "Finanz & Controlling",
+    "step3Text": "Mehrere Jahre in Finanz- und Controllingabteilungen.",
+    "step4Title": "Soziale Projekte",
+    "step4Text": "Übergang in gemeinnützige und sportliche Projekte in Frankfurt.",
+    "step5Title": "Heute",
+    "step5Text": "Beratung, Sportpolitik und Bewegungsförderung unter einem Dach."
+  },
+  "kontakt": {
+    "intro": "Hast du Interesse an einer Zusammenarbeit oder Fragen zu den Angeboten? Dann freue ich mich auf deine Nachricht!"
+  }
+}

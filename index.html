@@ -59,7 +59,7 @@
       <h1>Norman Höll</h1>
       <p class="hero-location">Frankfurt am Main</p>
     </div>
-    <p class="hero-tagline">
+    <p class="hero-tagline" data-field="hero.tagline" data-field-format="force-break">
       Hallo, ich bin Norman.<br class="force-break">
       Freiberuflicher Projektleiter, Referent und Sportübungsleiter mit Fokus auf<br class="force-break">
       soziale Bewegungs-, Bildungs- und Gesundheitsprojekte.
@@ -70,24 +70,24 @@
 <section id="angebot">
   <div class="wrap">
     <span class="eyebrow">Mein Angebot</span>
-    <p class="section-lead">
+    <p class="section-lead" data-field="angebot.lead" data-field-format="force-break">
       Ich verbinde wirtschaftliche Themen mit sozialem Engagement –<br class="force-break">
       in meinen Arbeiten stehen Kooperation, Nachhaltigkeit und Inklusion im Mittelpunkt
     </p>
     <div class="pillars">
       <div class="pillar-card">
-        <h3>Sportpolitik</h3>
-        <p>Jugend- und Sportpolitik bei der Sportjugend Hessen.</p>
+        <h3 data-field="angebot.pillarSportpolitikTitle">Sportpolitik</h3>
+        <p data-field="angebot.pillarSportpolitikText">Jugend- und Sportpolitik bei der Sportjugend Hessen.</p>
         <a href="#sportpolitik">Mehr erfahren →</a>
       </div>
       <div class="pillar-card">
-        <h3>Bewegungsförderung &amp; politisches Engagement</h3>
-        <p>Projekte, Kurse und Schulungen rund um Bewegung und Gesundheit.</p>
+        <h3 data-field="angebot.pillarBewegungTitle">Bewegungsförderung &amp; politisches Engagement</h3>
+        <p data-field="angebot.pillarBewegungText">Projekte, Kurse und Schulungen rund um Bewegung und Gesundheit.</p>
         <a href="#bewegung">Mehr erfahren →</a>
       </div>
       <div class="pillar-card">
-        <h3>Beratung &amp; Umsetzung für NonProfits</h3>
-        <p>Finanzielle &amp; digitale Beratung für Vereine, Stiftungen und Verbände.</p>
+        <h3 data-field="angebot.pillarBeratungTitle">Beratung &amp; Umsetzung für NonProfits</h3>
+        <p data-field="angebot.pillarBeratungText">Finanzielle &amp; digitale Beratung für Vereine, Stiftungen und Verbände.</p>
         <a href="#beratung">Mehr erfahren →</a>
       </div>
     </div>
@@ -98,7 +98,7 @@
   <div class="wrap">
     <span class="eyebrow">Aktuelles</span>
     <h2 class="section-title">News &amp; Blog</h2>
-    <p class="section-lead">Updates zu Projekten, Sportpolitik und aktuellen Themen.</p>
+    <p class="section-lead" data-field="news.lead">Updates zu Projekten, Sportpolitik und aktuellen Themen.</p>
     <div id="news-list">
       <p class="news-empty">News werden geladen…</p>
     </div>
@@ -110,7 +110,7 @@
     <div class="section-narrow">
       <span class="eyebrow">Tätigkeit</span>
       <h2>Jugend- und Sportpolitik</h2>
-      <p>
+      <p data-field="sportpolitik.intro">
         Bei der <strong>Sportjugend Hessen</strong> setze ich mich für demokratische Werte, Vielfalt und
         Menschenrechte im organisierten Sport ein. Sportvereine sind Orte der Begegnung und gelebten
         Alltags-Demokratie – meine Arbeit unterstützt sie dabei, das sichtbar zu machen und aktiv zu
@@ -118,13 +118,13 @@
         in Vereinsstrukturen.
       </p>
       <div class="info-card">
-        <span class="info-date">Aktuelles Projekt</span>
-        <h4>DemoS – Demokratie bewegt!</h4>
-        <p>Das Modellprojekt macht Demokratie im Sport erlebbar und hilft Vereinen, Mitbestimmung lebendiger und zugänglicher zu gestalten.</p>
+        <span class="info-date" data-field="sportpolitik.projectLabel">Aktuelles Projekt</span>
+        <h4 data-field="sportpolitik.projectTitle">DemoS – Demokratie bewegt!</h4>
+        <p data-field="sportpolitik.projectText">Das Modellprojekt macht Demokratie im Sport erlebbar und hilft Vereinen, Mitbestimmung lebendiger und zugänglicher zu gestalten.</p>
         <ul class="dot-list">
-          <li>Workshops zu demokratischen Werten und mehr Vielfalt in Sportvereinen</li>
-          <li>Beratung und Schulungen für Vorstände zu transparenter Entscheidungsfindung</li>
-          <li>Aufbau neuer, niedrigschwelliger Beteiligungsformate für Vereinsmitglieder</li>
+          <li data-field="sportpolitik.bullet1">Workshops zu demokratischen Werten und mehr Vielfalt in Sportvereinen</li>
+          <li data-field="sportpolitik.bullet2">Beratung und Schulungen für Vorstände zu transparenter Entscheidungsfindung</li>
+          <li data-field="sportpolitik.bullet3">Aufbau neuer, niedrigschwelliger Beteiligungsformate für Vereinsmitglieder</li>
         </ul>
         <a href="https://www.sportjugend-hessen.de/themen/demokratiestaerkung#c1811" class="cta-button is-ghost" target="_blank" rel="noopener">Mehr zu DemoS</a>
       </div>
@@ -137,17 +137,17 @@
   <div class="wrap">
     <span class="eyebrow">Aktuelle Projekte</span>
     <h2 class="section-title">Bewegungsförderung &amp; politisches Engagement</h2>
-    <p class="section-lead">
+    <p class="section-lead" data-field="bewegung.lead">
       Gesundheitsförderung, Bewegungsangebote und soziale Vernetzung.
     </p>
     <div class="card-grid card-grid-2">
       <details class="info-card">
         <summary>
-          <h4>Fit in Frankfurt</h4>
-          <p>Koordination von Bewegungsspaziergängen in Frankfurt.</p>
+          <h4 data-field="bewegung.fitTitle">Fit in Frankfurt</h4>
+          <p data-field="bewegung.fitSummary">Koordination von Bewegungsspaziergängen in Frankfurt.</p>
         </summary>
         <div class="info-card-detail">
-          <p>
+          <p data-field="bewegung.fitDetail">
             Regelmäßige, kostenlose Bewegungsspaziergänge für Menschen jeden Alters in Frankfurt –
             in Kooperation mit dem Gesundheitsamt Frankfurt und dem Sportamt Frankfurt am Main.
           </p>
@@ -156,11 +156,11 @@
       </details>
       <details class="info-card">
         <summary>
-          <h4>VHS Frankfurt – Bildungsurlaub</h4>
-          <p>„In Bewegung kommen" – Termine 2026 in Höchst und Bockenheim.</p>
+          <h4 data-field="bewegung.vhsTitle">VHS Frankfurt – Bildungsurlaub</h4>
+          <p data-field="bewegung.vhsSummary">„In Bewegung kommen" – Termine 2026 in Höchst und Bockenheim.</p>
         </summary>
         <div class="info-card-detail">
-          <p>
+          <p data-field="bewegung.vhsDetail" data-field-format="break">
             06.–10. Juli 2026, BiKuZ Höchst<br>
             05.–09. Oktober 2026, BiKuZ Höchst<br>
             23.–27. November 2026, VHS Bockenheim
@@ -170,15 +170,16 @@
       </details>
       <details class="info-card">
         <summary>
-          <h4>Frankfurter Stadtteilküche</h4>
-          <p>Pilotprojekt für öffentliche Nahverpflegung in Frankfurter Stadtteilen.</p>
+          <h4 data-field="bewegung.kuecheTitle">Frankfurter Stadtteilküche</h4>
+          <p data-field="bewegung.kuecheSummary">Pilotprojekt für öffentliche Nahverpflegung in Frankfurter Stadtteilen.</p>
         </summary>
         <div class="info-card-detail">
           <p>
-            Die Frankfurter Stadtteilküche erprobt öffentliche Kochaktionen als gelebte Forderung nach
+            <span data-field="bewegung.kuecheDetail">Die Frankfurter Stadtteilküche erprobt öffentliche Kochaktionen als gelebte Forderung nach
             einer fürsorgenden Stadt: Ernährung soll so selbstverständlich zur Stadt gehören wie
             Bibliotheken oder Schwimmbäder. Ziel ist eine öffentliche Nahverpflegung für alle
-            (#ÖNVP) in jedem Frankfurter Stadtteil – <a href="#news">mehr dazu in den News</a>.
+            (#ÖNVP) in jedem Frankfurter Stadtteil.</span>
+            <a href="#news">Mehr dazu in den News</a>
           </p>
           <a href="https://frankfurter-stadtteilkueche.org" class="cta-button is-ghost" target="_blank" rel="noopener">Zur Projektseite</a>
         </div>
@@ -191,7 +192,7 @@
   <div class="wrap">
     <span class="eyebrow">Beratung</span>
     <h2 class="section-title">Finanzielle &amp; digitale Beratung für NonProfits</h2>
-    <p class="section-lead">
+    <p class="section-lead" data-field="beratung.lead">
       Vereine, Stiftungen und Verbände stehen oft vor denselben Herausforderungen: knappe Ressourcen,
       gewachsene Prozesse und wenig Zeit für Digitalisierung. Mit meinem Hintergrund aus BWL-Studium,
       Finanz- und Controllingabteilungen sowie eigener Verbandsarbeit unterstütze ich sie dabei,
@@ -199,25 +200,25 @@
     </p>
     <div class="card-grid card-grid-3">
       <div class="info-card">
-        <h4>Finanzplanung &amp; Controlling</h4>
-        <p>Budgetierung und Controlling für Vereine &amp; Stiftungen.</p>
+        <h4 data-field="beratung.service1Title">Finanzplanung &amp; Controlling</h4>
+        <p data-field="beratung.service1Text">Budgetierung und Controlling für Vereine &amp; Stiftungen.</p>
       </div>
       <div class="info-card">
-        <h4>Datenanalyse &amp; Prozesse</h4>
-        <p>Prozessoptimierung, z.&nbsp;B. Vereinsverwaltung und Reporting.</p>
+        <h4 data-field="beratung.service2Title">Datenanalyse &amp; Prozesse</h4>
+        <p data-field="beratung.service2Text">Prozessoptimierung, z.&nbsp;B. Vereinsverwaltung und Reporting.</p>
       </div>
       <div class="info-card">
-        <h4>Digitalisierung</h4>
-        <p>Einführung digitaler Tools für Verwaltung und Kommunikation.</p>
+        <h4 data-field="beratung.service3Title">Digitalisierung</h4>
+        <p data-field="beratung.service3Text">Einführung digitaler Tools für Verwaltung und Kommunikation.</p>
       </div>
     </div>
     <div class="info-card is-feature">
       <span class="info-date">Referenzprojekt</span>
-      <h4>Weltladen-Dachverband e.V.</h4>
-      <p>Datenanalyse und Prozessoptimierung für den bundesweiten Dachverband der Weltläden.</p>
-      <p class="info-target">Für: Vereine, Stiftungen und Verbände im sozialen, sportlichen und gemeinnützigen Bereich.</p>
+      <h4 data-field="beratung.referenceTitle">Weltladen-Dachverband e.V.</h4>
+      <p data-field="beratung.referenceText">Datenanalyse und Prozessoptimierung für den bundesweiten Dachverband der Weltläden.</p>
+      <p class="info-target" data-field="beratung.referenceTarget">Für: Vereine, Stiftungen und Verbände im sozialen, sportlichen und gemeinnützigen Bereich.</p>
     </div>
-    <p class="placeholder-note">
+    <p class="placeholder-note" data-field="beratung.placeholderNote">
       Platzhalter: genaues Leistungspaket ergänzen (z.&nbsp;B. Einzelberatung, Workshops, Projektbegleitung).
     </p>
     <div class="cta-row is-centered">
@@ -252,8 +253,8 @@
         <img src="images/portrait-norman.jpg" alt="Norman Höll">
       </div>
       <div>
-        <p class="about-quote">Brücken bauen zwischen Zahlen, Konzepten und echten Begegnungen.</p>
-        <p>
+        <p class="about-quote" data-field="ueberMich.quote">Brücken bauen zwischen Zahlen, Konzepten und echten Begegnungen.</p>
+        <p data-field="ueberMich.bio">
           Aufgewachsen auf dem Land, lebe ich heute in Frankfurt und bewege mich beruflich zwischen
           Wirtschaft, Bildung und Sport. Als sportbegeisterter Mensch bin ich überzeugt:
           <strong>Veränderung entsteht im Miteinander.</strong>
@@ -263,28 +264,28 @@
     <div class="timeline">
       <div class="timeline-step">
         <span class="timeline-dot"></span>
-        <h4>Landleben</h4>
-        <p>Aufgewachsen auf dem Land, geprägt von Bewegung und Gemeinschaft.</p>
+        <h4 data-field="ueberMich.step1Title">Landleben</h4>
+        <p data-field="ueberMich.step1Text">Aufgewachsen auf dem Land, geprägt von Bewegung und Gemeinschaft.</p>
       </div>
       <div class="timeline-step">
         <span class="timeline-dot"></span>
-        <h4>BWL-Studium</h4>
-        <p>Wirtschaftliches Fundament als Ausgangspunkt.</p>
+        <h4 data-field="ueberMich.step2Title">BWL-Studium</h4>
+        <p data-field="ueberMich.step2Text">Wirtschaftliches Fundament als Ausgangspunkt.</p>
       </div>
       <div class="timeline-step">
         <span class="timeline-dot"></span>
-        <h4>Finanz &amp; Controlling</h4>
-        <p>Mehrere Jahre in Finanz- und Controllingabteilungen.</p>
+        <h4 data-field="ueberMich.step3Title">Finanz &amp; Controlling</h4>
+        <p data-field="ueberMich.step3Text">Mehrere Jahre in Finanz- und Controllingabteilungen.</p>
       </div>
       <div class="timeline-step">
         <span class="timeline-dot"></span>
-        <h4>Soziale Projekte</h4>
-        <p>Übergang in gemeinnützige und sportliche Projekte in Frankfurt.</p>
+        <h4 data-field="ueberMich.step4Title">Soziale Projekte</h4>
+        <p data-field="ueberMich.step4Text">Übergang in gemeinnützige und sportliche Projekte in Frankfurt.</p>
       </div>
       <div class="timeline-step is-current">
         <span class="timeline-dot"></span>
-        <h4>Heute</h4>
-        <p>Beratung, Sportpolitik und Bewegungsförderung unter einem Dach.</p>
+        <h4 data-field="ueberMich.step5Title">Heute</h4>
+        <p data-field="ueberMich.step5Text">Beratung, Sportpolitik und Bewegungsförderung unter einem Dach.</p>
       </div>
     </div>
   </div>
@@ -294,7 +295,7 @@
   <div class="wrap">
     <div>
       <h2>Kontakt</h2>
-      <p>Hast du Interesse an einer Zusammenarbeit oder Fragen zu den Angeboten? Dann freue ich mich auf deine Nachricht!</p>
+      <p data-field="kontakt.intro">Hast du Interesse an einer Zusammenarbeit oder Fragen zu den Angeboten? Dann freue ich mich auf deine Nachricht!</p>
       <p class="contact-address">
         Norman Höll<br>
         c/o Villa Gründergeist<br>

@@ -60,6 +60,31 @@ function initScrollSpy() {
   sections.forEach((s) => observer.observe(s));
 }
 
+async function loadSiteContent() {
+  try {
+    const res = await fetch("content/site.json", { cache: "no-store" });
+    if (!res.ok) throw new Error("site.json nicht gefunden");
+    const data = await res.json();
+
+    document.querySelectorAll("[data-field]").forEach((el) => {
+      const path = el.dataset.field;
+      const value = path.split(".").reduce((obj, key) => (obj ? obj[key] : undefined), data);
+      if (value === undefined || value === null) return;
+
+      const format = el.dataset.fieldFormat;
+      if (format === "force-break") {
+        el.innerHTML = String(value).split("\n").map(escapeHtml).join('<br class="force-break">');
+      } else if (format === "break") {
+        el.innerHTML = String(value).split("\n").map(escapeHtml).join("<br>");
+      } else {
+        el.textContent = value;
+      }
+    });
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 let openPostModal = null;
 
 async function loadNews() {
@@ -229,5 +254,6 @@ function initPostModal() {
   };
 }
 
+loadSiteContent();
 loadNews();
 openPostModal = initPostModal();
